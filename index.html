@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Momentum App</title>
+
+    <link rel="stylesheet" href="./assets/scss/styles.css" />
+
+    <script src="./assets/js/bg.js" defer></script>
+    <script src="./assets/js/name-functions.js" defer></script>
+    <script src="./assets/js/time-functions.js" defer></script>
+    <script src="./assets/js/goal-functions.js" defer></script>
+    <script src="./assets/js/quotes-functions.js" defer></script>
+    <script src="./assets/js/to-do-list-functions.js" defer></script>
+  </head>
+
+  <body>
+    <!-- input name -->
+    <div class="name-container">
+      <label class="name-question" for="name-textbox">What is your name?</label>
+      <span>
+        <input
+          type="text"
+          name="name"
+          id="name-textbox"
+          autocomplete="off"
+          required
+        />
+        <input
+          type="submit"
+          id="name-submit"
+          onclick="timeSensitiveGreetUser()"
+          value="➤"
+        />
+      </span>
+      <p id="name-required">Please type in your name.</p>
+    </div>
+
+    <!--background-->
+    <div class="bg"></div>
+
+    <!-- main page -->
+    <div class="main-container">
+      <!-- date, time, and greeting -->
+      <section class="info-section">
+        <div class="time-container">
+          <h1 id="hours"></h1>
+          <h1 id="minutes"></h1>
+        </div>
+        <div class="greeting-container">
+          <h2 id="date"></h2>
+          <h2 id="greeting"></h2>
+        </div>
+      </section>
+
+      <!-- goals -->
+      <section class="goals-section">
+        <div class="goal-add-container">
+          <label class="goal-question" for="goal-textbox"
+            >What's your goal for today?</label
+          >
+          <input
+            type="text"
+            name="goal-textbox"
+            id="goal-textbox"
+            autocomplete="off"
+          />
+          <input type="submit" value="+" id="goal-submit" onclick="getGoal()" />
+        </div>
+
+        <div class="goal-container">
+          <span>Today's main focus:</span>
+          <br />
+          <button id="goal-delete" onclick="removeGoal()">×</button>
+          <input type="checkbox" name="goal-checkbox" id="goal-checkbox" />
+          <label for="goal-checkbox"><span id="goal-text"></span></label>
+        </div>
+      </section>
+
+      <!-- quotes -->
+      <section class="quotes-section">
+        <div class="quote-container">
+          <span id="quote"></span>
+          <br />
+          <button id="quote-change" onclick="randomQuote()">Next quote</button>
+          <button id="quote-add" onclick="showQuoteAddContainer()">
+            Add quote
+          </button>
+        </div>
+        <div class="quote-add-container">
+          <label class="quote-question" for="quote-new"
+            >What's your quote?</label
+          >
+          <br />
+          <input
+            type="text"
+            name="quote-new"
+            id="quote-new"
+            autocomplete="off"
+          />
+          <input
+            type="submit"
+            value="+"
+            id="quote-submit"
+            onclick="addQuote()"
+          />
+        </div>
+      </section>
+    </div>
+
+    <!--to do list-->
+    <div class="todo-container" id="todo-container">
+      <span id="todo-title">To-Do List:</span>
+      <input type="text" name="todo" id="todo-textbox" autocomplete="off" />
+      <input type="submit" value="+" id="todo-submit" onclick="addTodo()" />
+
+      <div class="todolist-container">
+        <ul id="todo-ul"></ul>
+      </div>
+    </div>
+  </body>
+</html>
