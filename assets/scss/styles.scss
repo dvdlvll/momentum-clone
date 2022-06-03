@@ -1,0 +1,27 @@
+@import "./variables";
+@import "./mixins";
+@import "./reset";
+
+/*-----background-----*/
+@import "./background";
+
+/*textboxes*/
+@import "./textboxes";
+
+/*name-container*/
+@import "./name-container";
+
+/*main-container*/
+@import "./main";
+
+/* to-do list section */
+@import "./todo";
+
+@keyframes containerFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,60 @@
+.todo-container {
+  @include flex-properties(column, $align: flex-start);
+  width: 40vw;
+  height: 100vh;
+  padding: 5%;
+
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  #todo-title {
+    @include font-properties(white, $cabin, 5vh, 700, center);
+  }
+
+  #todo-textbox {
+    width: 30vw;
+    @include font-properties($grey, $cabin, $h2, 400);
+  }
+
+  #todo-submit {
+    display: none;
+  }
+
+  .todolist-container {
+    margin-top: 5%;
+
+    ul li {
+      @include font-properties(white, $cabin, $h3);
+
+      user-select: none;
+      cursor: pointer;
+
+      transition: ease 0.2s;
+      animation: containerFade;
+      animation-duration: 0.5s;
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      input[type="checkbox"]:checked + label {
+        text-decoration: line-through;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .todo-delete {
+        @include font-properties($grey, $cabin, $h3);
+        padding-right: 10px;
+        cursor: pointer;
+        border: none;
+
+        user-select: none;
+        background: none;
+      }
+
+      .todo-delete:hover {
+        color: white;
+      }
+    }
+  }
+}

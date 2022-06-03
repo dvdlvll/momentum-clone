@@ -1,0 +1,580 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,700;1,400&display=swap");
+/* font */
+/* font weight options: 400, 700 */
+/* colors */
+/* sizes */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: white;
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/*-----background-----*/
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-animation-name: backgroundFadeIn;
+          animation-name: backgroundFadeIn;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+@-webkit-keyframes backgroundFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes backgroundFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.img-1 {
+  background-image: url("../img/1.png");
+}
+
+.img-2 {
+  background-image: url("../img/2.png");
+}
+
+.img-3 {
+  background-image: url("../img/3.png");
+}
+
+.img-4 {
+  background-image: url("../img/4.png");
+}
+
+.img-5 {
+  background-image: url("../img/5.png");
+}
+
+/*textboxes*/
+input[type="text"] {
+  background: none;
+  outline: none;
+  border-style: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+input[type="text"]:hover,
+input[type="text"]:active,
+input[type="text"]:focus {
+  border-color: white;
+}
+
+/*name-container*/
+.name-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10%;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+
+.name-container span {
+  width: 100%;
+}
+
+.name-container input[type="submit"] {
+  border: none;
+  font-family: monospace;
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: monospace;
+  font-size: xx-large;
+}
+
+.name-container input[type="submit"]:hover {
+  color: white;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.name-container #name-textbox {
+  margin-top: 2%;
+  margin-right: 1%;
+  min-width: 90%;
+  font-size: x-large;
+}
+
+.name-container .name-question {
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+.name-container #name-required {
+  font-size: small;
+  font-weight: 400;
+  display: none;
+  margin-top: 1%;
+  color: red;
+}
+
+/*main-container*/
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60vw;
+  height: 50%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+  margin: auto auto;
+  padding: 5% 5%;
+  opacity: 0;
+  /* info section */
+  /* goal-section */
+  /*quote-section*/
+}
+
+.main-container .info-section {
+  width: inherit;
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main-container .info-section .time-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: 5vh;
+  font-weight: 700;
+  text-align: center;
+  line-height: 6vh;
+  cursor: pointer;
+  padding-right: 1%;
+}
+
+.main-container .info-section .time-container #hours,
+.main-container .info-section .time-container #minutes {
+  z-index: 1;
+}
+
+.main-container .info-section .greeting-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container .info-section .greeting-container #date {
+  color: white;
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: large;
+  font-weight: 400;
+}
+
+.main-container .info-section .greeting-container #greeting {
+  color: white;
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: xx-large;
+  font-weight: 400;
+}
+
+.main-container .goals-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: inherit;
+  height: inherit;
+  margin-top: 15%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.main-container .goals-section .goal-add-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: x-large;
+  font-weight: 400;
+  -webkit-animation-name: containerFade;
+          animation-name: containerFade;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.main-container .goals-section .goal-add-container #goal-textbox {
+  width: 60vw;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: x-large;
+  font-weight: 400;
+}
+
+.main-container .goals-section .goal-add-container #goal-submit {
+  display: none;
+}
+
+.main-container .goals-section .goal-container {
+  display: none;
+  color: white;
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: x-large;
+  font-weight: 400;
+  -webkit-animation-name: containerFade;
+          animation-name: containerFade;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.main-container .goals-section .goal-container label {
+  color: white;
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: xx-large;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
+}
+
+.main-container .goals-section .goal-container #goal-checkbox {
+  display: none;
+}
+
+.main-container .goals-section .goal-container #goal-checkbox:checked + label {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main-container .goals-section .goal-container #goal-delete {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: xx-large;
+  cursor: pointer;
+  border: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: none;
+}
+
+.main-container .goals-section .goal-container #goal-delete:hover,
+.main-container .goals-section .goal-container #goal-delete:active {
+  color: white;
+}
+
+.main-container .quotes-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: inherit;
+  height: inherit;
+  margin-top: 25%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.main-container .quotes-section .quote-container {
+  -webkit-animation-name: containerFade;
+          animation-name: containerFade;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.main-container .quotes-section .quote-container #quote {
+  font-style: italic;
+}
+
+.main-container .quotes-section .quote-container #quote::before {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: serif;
+  font-size: xx-large;
+  display: inline-block;
+  position: relative;
+  margin-right: 0.5%;
+  bottom: -10px;
+  content: open-quote;
+}
+
+.main-container .quotes-section .quote-container #quote::after {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: serif;
+  font-size: xx-large;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  margin-top: -100%;
+  margin-right: -100%;
+  content: close-quote;
+}
+
+.main-container .quotes-section .quote-container #quote-add,
+.main-container .quotes-section .quote-container #quote-change {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: small;
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  background: none;
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
+}
+
+.main-container .quotes-section .quote-container #quote-add:active,
+.main-container .quotes-section .quote-container #quote-change:active {
+  color: white;
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
+}
+
+.main-container .quotes-section .quote-add-container {
+  display: none;
+  -webkit-animation-name: containerFade;
+          animation-name: containerFade;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.main-container .quotes-section .quote-add-container #quote-submit {
+  display: none;
+}
+
+.main-container .quotes-section .quote-add-container #quote-new {
+  width: 60vw;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: x-large;
+  font-weight: 400;
+}
+
+/* to-do list section */
+.todo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 40vw;
+  height: 100vh;
+  padding: 5%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.todo-container #todo-title {
+  color: white;
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: 5vh;
+  font-weight: 700;
+  text-align: center;
+}
+
+.todo-container #todo-textbox {
+  width: 30vw;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: x-large;
+  font-weight: 400;
+}
+
+.todo-container #todo-submit {
+  display: none;
+}
+
+.todo-container .todolist-container {
+  margin-top: 5%;
+}
+
+.todo-container .todolist-container ul li {
+  color: white;
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: large;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  -webkit-transition: ease 0.2s;
+  transition: ease 0.2s;
+  -webkit-animation: containerFade;
+          animation: containerFade;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.todo-container .todolist-container ul li input[type="checkbox"] {
+  display: none;
+}
+
+.todo-container .todolist-container ul li input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.todo-container .todolist-container ul li .todo-delete {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Cabin", "Helvetica Neue", sans-serif;
+  font-size: large;
+  padding-right: 10px;
+  cursor: pointer;
+  border: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: none;
+}
+
+.todo-container .todolist-container ul li .todo-delete:hover {
+  color: white;
+}
+
+@-webkit-keyframes containerFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes containerFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

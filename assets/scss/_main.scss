@@ -1,0 +1,183 @@
+.main-container {
+  @include flex-properties(row, space-between, center);
+  width: 60vw;
+  height: 50%;
+
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  margin: auto auto;
+  padding: 5% 5%;
+  opacity: 0;
+
+  /* info section */
+  .info-section {
+    width: inherit;
+    height: inherit;
+
+    @include flex-properties(row, $align: center);
+    user-select: none;
+
+    .time-container {
+      @include flex-properties(column);
+      @include font-properties(white, $cabin, 5vh, 700, center);
+      line-height: 6vh;
+      cursor: pointer;
+      padding-right: 1%;
+
+      #hours,
+      #minutes {
+        z-index: 1;
+      }
+    }
+
+    .greeting-container {
+      @include flex-properties(column);
+
+      #date {
+        @include font-properties(white, $cabin, $h3, 400);
+      }
+
+      #greeting {
+        @include font-properties(white, $cabin, $h1, 400);
+      }
+    }
+  }
+
+  /* goal-section */
+  .goals-section {
+    @include flex-properties(column, flex-start, flex-start);
+    width: inherit;
+    height: inherit;
+
+    margin-top: 15%;
+
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    .goal-add-container {
+      @include flex-properties(column, center);
+      @include font-properties(white, $cabin, $h2, 400);
+      animation-name: containerFade;
+      animation-duration: 0.5s;
+
+      #goal-textbox {
+        width: 60vw;
+        @include font-properties($grey, $cabin, $h2, 400);
+      }
+
+      #goal-submit {
+        display: none;
+      }
+    }
+
+    .goal-container {
+      display: none;
+      @include font-properties(white, $cabin, $h2, 400);
+      animation-name: containerFade;
+      animation-duration: 0.5s;
+
+      label {
+        @include font-properties(white, $cabin, $h1, 700);
+        cursor: pointer;
+        user-select: none;
+        transition: ease 0.5s;
+      }
+
+      #goal-checkbox {
+        display: none;
+      }
+
+      #goal-checkbox:checked + label {
+        text-decoration: line-through;
+        color: $grey;
+        user-select: none;
+      }
+
+      #goal-delete {
+        @include font-properties($grey, $cabin, $h1);
+        cursor: pointer;
+        border: none;
+
+        user-select: none;
+        background: none;
+      }
+
+      #goal-delete:hover,
+      #goal-delete:active {
+        color: white;
+      }
+    }
+  }
+
+  /*quote-section*/
+  .quotes-section {
+    @include flex-properties(column, flex-start, flex-start);
+    width: inherit;
+    height: inherit;
+
+    margin-top: 25%;
+
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    .quote-container {
+      animation-name: containerFade;
+      animation-duration: 0.5s;
+
+      #quote {
+        font-style: italic;
+      }
+
+      #quote::before {
+        @include font-properties($grey, serif, $h1);
+        display: inline-block;
+        position: relative;
+        margin-right: 0.5%;
+        bottom: -10px;
+        content: open-quote;
+      }
+
+      #quote::after {
+        @include font-properties($grey, serif, $h1);
+        display: inline-block;
+        position: relative;
+        top: 10px;
+        margin-top: -100%;
+        margin-right: -100%;
+        content: close-quote;
+      }
+
+      #quote-add,
+      #quote-change {
+        @include font-properties(rgba(255, 255, 255, 0.5), $cabin, $p);
+        cursor: pointer;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        background: none;
+        transition: ease 0.5s;
+      }
+
+      #quote-add:active,
+      #quote-change:active {
+        color: white;
+        transition: ease 0.5s;
+      }
+    }
+
+    .quote-add-container {
+      display: none;
+      animation-name: containerFade;
+      animation-duration: 0.5s;
+
+      #quote-submit {
+        display: none;
+      }
+
+      #quote-new {
+        width: 60vw;
+        @include font-properties($grey, $cabin, $h2, 400);
+      }
+    }
+  }
+}

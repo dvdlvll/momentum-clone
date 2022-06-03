@@ -1,0 +1,39 @@
+.bg {
+  @include position-properties(fixed, 0, 0, -1);
+  @include dimension-properties(100vh, 100vw);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  animation-name: backgroundFadeIn;
+  animation-duration: 5s;
+}
+
+@keyframes backgroundFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.img-1 {
+  @include random-background(1);
+}
+
+.img-2 {
+  @include random-background(2);
+}
+
+.img-3 {
+  @include random-background(3);
+}
+
+.img-4 {
+  @include random-background(4);
+}
+
+.img-5 {
+  @include random-background(5);
+}

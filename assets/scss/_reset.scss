@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  overflow: hidden;
+
+  @include flex-properties(row, center, flex-start);
+  @include font-properties(white, $cabin);
+  text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    @include flex-properties(column, center, center);
+  }
+}
