@@ -1,36 +1,35 @@
-/* Function for adding to-do list elements */
 function addTodo() {
   let todoInput = document.querySelector("#todo-textbox").value;
   let todoList = document.querySelector("#todo-ul");
 
   if (todoInput !== "") {
-    /* Elements to be inserted */
+    /* creating elements after input */
     let listItem = document.createElement("li");
     let itemCheckbox = document.createElement("input");
     let itemContent = document.createElement("label");
     let itemDelete = document.createElement("button");
 
-    /* Changing content and properties of elements to be inserted */
+    /* adding properties to elements created */
     itemDelete.innerText = "×";
     itemCheckbox.type = "checkbox";
     itemContent.innerText = todoInput;
     listItem.style.listStyle = "none";
 
-    /* Add class to elements for styling */
+    /* adding classes to elements created */
     itemCheckbox.classList.add("todo-checkbox");
     itemDelete.classList.add("todo-delete");
     itemContent.classList.add("todo-item");
 
-    /* Apend elements to new list item */
+    /* append the elements */
     listItem.append(itemDelete);
     listItem.append(itemCheckbox);
     listItem.append(itemContent);
     todoList.append(listItem);
 
-    /* Reset to-do input content */
+    /* reset textbox */
     document.querySelector("#todo-textbox").value = "";
 
-    /* Function and event listener for to-do toggle */
+    /* toggle for checked/unchecked class property for list */
     listItem.addEventListener("click", function () {
       if (itemCheckbox.checked == true) {
         itemCheckbox.checked = false;
@@ -43,7 +42,7 @@ function addTodo() {
       }
     });
 
-    /* Function and event listener for deleting to-do items */
+    /* delete list item */
     itemDelete.addEventListener("click", function () {
       listItem.remove();
     });
